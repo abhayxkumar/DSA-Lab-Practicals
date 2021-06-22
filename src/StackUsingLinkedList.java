@@ -48,8 +48,9 @@ public class StackUsingLinkedList
         }else{
             Node current;
             for(current = top; current.next!=null; current=current.next){
+                System.out.println(current.data);
             }
-            System.out.println(current.data);
+
         }
     }
 
