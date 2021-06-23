@@ -1,2 +1,41 @@
-public class BinarySearchUsingArray {
+import java.util.Scanner;
+class BinarySearchUsingArray
+{
+    public static void main(String args[])
+    {
+        int counter, num, item, array[], first, last, middle;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter Number of Elements: ");
+        num = input.nextInt();
+        array = new int[num];
+
+        System.out.println("Enter " + num + " Elements:");
+
+        for (counter = 0; counter < num; counter++)
+            array[counter] = input.nextInt();
+
+        System.out.println("Enter the Search Element: ");
+        item = input.nextInt();
+        first = 0;
+        last = num - 1;
+        middle = (first + last)/2;
+
+        while( first <= last )
+        {
+            if ( array[middle] < item )
+                first = middle + 1;
+            else if ( array[middle] == item )
+            {
+                System.out.println(item + " found at location " + (middle + 1) + ".");
+                break;
+            }
+            else
+            {
+                last = middle - 1;
+            }
+            middle = (first + last)/2;
+        }
+        if ( first > last )
+            System.out.println(item + " is not found.\n");
+    }
 }
